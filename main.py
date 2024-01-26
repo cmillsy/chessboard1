@@ -1,13 +1,12 @@
-# this is a test
+# this is a test2
 from ota import OTAUpdater
 from WIFI_CONFIG import SSID, PASSWORD
+from machine import Pin, Timer
 
 firmware_url = "https://raw.githubusercontent.com/cmillsy/chessboard1/"
-
 ota_updater = OTAUpdater(SSID, PASSWORD, firmware_url, "main.py")
 ota_updater.download_and_install_update_if_available()
 
-from machine import Pin, Timer
 led = Pin("LED", Pin.OUT)
 timer = Timer()
 
